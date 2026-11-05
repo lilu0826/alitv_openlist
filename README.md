@@ -19,6 +19,12 @@
 docker run --name=alitv_openlist -d -p 8081:8081 --restart=always ghcr.io/lilu0826/alitv_openlist:latest
 ```
 
+# Vercel 一键部署
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/wisinfun/alitv_openlist)
+
+部署完成后访问分配到的域名即可使用，OpenList 的在线 API 地址填写 `https://你的域名/token`。
+
 # 使用教程
 访问 http://IP:PORT/
 

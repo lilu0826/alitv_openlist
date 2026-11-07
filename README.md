@@ -25,6 +25,12 @@ docker run --name=alitv_openlist -d -p 8081:8081 --restart=always ghcr.io/lilu08
 
 部署完成后访问分配到的域名即可使用，OpenList 的在线 API 地址填写 `https://你的域名/token`。
 
+# Cloudflare Workers 一键部署
+
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/wisinfun/alitv_openlist)
+
+Cloudflare Workers 版本位于 `worker/` 目录，用 JavaScript 实现了与 Go 版本完全一致的功能（二维码登录、状态轮询、token 刷新），无需额外资源。部署完成后，OpenList 的在线 API 地址填写 `https://你的Worker域名/token`；若 `workers.dev` 域名访问受限，可绑定自定义域名。
+
 # 使用教程
 访问 http://IP:PORT/
 

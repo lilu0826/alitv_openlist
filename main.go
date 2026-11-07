@@ -14,6 +14,7 @@ import (
 	"fmt"
 	"math/rand"
 	"net/http"
+	"os"
 	"sort"
 	"strconv"
 	"strings"
@@ -456,5 +457,11 @@ func main() {
 	router.GET("/token", getToken)
 	router.POST("/token", postToken)
 
-	router.Run(":8081")
+	// Vercel 通过 PORT 环境变量注入监听端口，本地运行默认 8081
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8081"
+	}
+
+	router.Run(":" + port)
 }
